@@ -1,21 +1,49 @@
 {
-  "name": "eduportal1",
+  "name": "eduportal",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "clear": "expo start -c",
+    "typecheck": "tsc --noEmit",
+    "smoke:calendar": "node scripts/calendar_web_check.mjs",
+    "smoke:tablet": "node scripts/tablet_web_check.mjs",
+    "smoke:firefox": "python scripts/firefox_web_smoke.py"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/bottom-tabs": "^7.5.0",
+    "@react-navigation/native": "^7.1.17",
+    "@react-navigation/native-stack": "^7.3.25",
+    "@supabase/supabase-js": "^2.105.3",
     "expo": "~54.0.33",
+    "expo-constants": "^55.0.15",
+    "expo-document-picker": "~14.0.8",
+    "expo-linking": "^55.0.14",
+    "expo-screen-orientation": "~9.0.9",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-calendars": "^1.1314.0",
+    "react-native-gesture-handler": "~2.28.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-modal": "^14.0.0-rc.1",
+    "react-native-qrcode-svg": "^6.3.21",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "react-native-svg": "^15.15.4",
+    "react-native-url-polyfill": "^3.0.0",
+    "react-native-web": "^0.21.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+    "playwright": "^1.60.0",
     "typescript": "~5.9.2"
   },
   "private": true

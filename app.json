@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "EduPortal1",
-    "slug": "EduPortal1",
+    "name": "EduPortal",
+    "slug": "EduPortal",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "eduportal",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -13,18 +14,41 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.eduportal",
+      "infoPlist": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": ["eduportal"]
+          }
+        ],
+        "LSApplicationQueriesSchemes": ["eduportal", "exp"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "package": "com.yourcompany.eduportal",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "eduportal"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "supabaseUrl": "https://imeqzqgljvobcwyazhou.supabase.co",
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltZXF6cWdsanZvYmN3eWF6aG91Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwNjk0NTQsImV4cCI6MjA5MzY0NTQ1NH0.LROzUQD7PkvfGah2x3dJ-pHEvIQPEq93ULka4QUiVkQ"
     }
   }
 }
